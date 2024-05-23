@@ -1052,7 +1052,7 @@ main p {
 }
 
 /* Footer Section */
-footer {
+/* footer {
 	text-align: center;
  }
  
@@ -1072,7 +1072,7 @@ footer {
 	color: var(--corn-blue);
 	font-size: 1.1em;
  }
-
+ */
 .project-list {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -1448,10 +1448,10 @@ textarea.form-input::-webkit-resizer {
 	/**
    * #REUSED STYLE
    */
-
+/* 
 	footer {
 		padding-bottom: 10%;
-	}
+	} */
 
 	.sidebar,
 	article {
@@ -1878,9 +1878,9 @@ textarea.form-input::-webkit-resizer {
 
 	}
 
-	footer {
+/* 	footer {
 		padding-bottom: 2%;
-	}
+	} */
 
 	.thm-tgl {
 		top: var(--tp);
