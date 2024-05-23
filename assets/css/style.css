@@ -2111,3 +2111,60 @@ textarea.form-input::-webkit-resizer {
 	}
 
 }
+
+
+    /* Styles for the backdrop */
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    }
+
+    /* Styles for the alert container */
+    .alert-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #333; /* Dark background color */
+        color: #fff; /* White text color */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        z-index: 1000;
+        text-align: center;
+    }
+
+    /* Styles for the alert content */
+    .alert-content {
+        text-align: center;
+    }
+
+    .alert-content h2 {
+        margin-top: 0;
+        margin-bottom: 10px; /* Add space between title and message */
+        font-size: 1.5em;
+		color: #6BAEE5;
+    }
+
+    .alert-content p {
+        margin-bottom: 20px; /* Add space between message and button */
+        font-size: 1em;
+    }
+
+    /* Styles for the alert button */
+    .alert-content button {
+        display: block;
+        margin: 10px auto 0; /* Center the button horizontally and add space from the message */
+        padding: 10px 20px;
+        border: none;
+        background-color: #6c9ec7;
+        color: #000; /* Black text color */
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+    }
