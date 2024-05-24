@@ -24,11 +24,7 @@ function customAlert(title, message) {
 
     const alertButton = document.createElement('button');
     alertButton.textContent = 'OK';
-    alertButton.addEventListener('click', function() {
-        body.removeChild(backdrop); // Remove the backdrop
-        body.removeChild(alertContainer); // Remove the alert container
-        document.removeEventListener('keydown', escKeyListener); // Remove keydown event listener
-    });
+    alertButton.addEventListener('click', removeAlert);
 
     // Append elements to the alert container
     alertContent.appendChild(alertTitle);
@@ -37,12 +33,17 @@ function customAlert(title, message) {
     alertContainer.appendChild(alertContent);
     body.appendChild(alertContainer);
 
+    // Function to remove the alert
+    function removeAlert() {
+        body.removeChild(backdrop); // Remove the backdrop
+        body.removeChild(alertContainer); // Remove the alert container
+        document.removeEventListener('keydown', escKeyListener); // Remove keydown event listener
+    }
+
     // Function to handle Esc key press
     function escKeyListener(event) {
         if (event.key === 'Escape') {
-            body.removeChild(backdrop); // Remove the backdrop
-            body.removeChild(alertContainer); // Remove the alert container
-            document.removeEventListener('keydown', escKeyListener); // Remove keydown event listener
+            removeAlert(); // Remove the alert
         }
     }
 
@@ -55,17 +56,15 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 
 // Disable F12 and other key combinations for viewing source or opening developer tools
 document.addEventListener('keydown', function(event) {
-    if (event.key === 'F12' || 
-        (event.ctrlKey && (event.key === 'u' || event.key === 'U' || event.key === 's' || event.key === 'S'))) {
-        customAlert('Content Protection', 'Content is protected. Viewing the page source or using developer tools is disabled.');
-        event.preventDefault();
-    }
-});
+    const isF12 = event.key === 'F12';
+    const isCtrlShiftI = event.ctrlKey && event.shiftKey && ( event.key === 'I' || event.key === 'i' );
+    const isCtrlShiftJ = event.ctrlKey && event.shiftKey && ( event.key === 'J' || event.key === 'j' );
+    const isCtrlShiftC = event.ctrlKey && event.shiftKey && ( event.key === 'C' || event.key === 'c' );
+    const isCtrlS = event.ctrlKey && ( event.key === 'S' || event.key === 's' );
+    const isCtrlU = event.ctrlKey && ( event.key === 'U' || event.key === 'u' );
 
-// jQuery part to handle ctrl+u
-$(document).keypress("u", function(event) {
-    if (event.ctrlKey) {
-        customAlert('Content Protection', 'Content is protected. Viewing the page source is disabled.');
+    if (isF12 || isCtrlShiftI || isCtrlShiftJ || isCtrlShiftC || isCtrlS || isCtrlU) {
+        customAlert('Content Protection', 'Content is protected. Viewing the page source or using developer tools is disabled.');
         event.preventDefault();
     }
 });
