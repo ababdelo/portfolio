@@ -151,7 +151,3 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 	});
 }
-
- // JavaScript to get the current year and insert it into the span
- document.getElementById('currentYear').textContent = new Date().getFullYear();
- 
