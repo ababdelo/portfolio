@@ -288,14 +288,27 @@ main p {
     transition: var(--transition-1);
 }
 .avatar-box {
-    background: 0 0;
+    filter: drop-shadow(2px 2px 10px hsl(0, 4%, 19%));
     border-radius: 20px;
 }
+
+.avatar-box img {
+    filter: drop-shadow(0 0 8px hsl(0, 2%, 33%));
+}
+
+.info-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .info-content .name {
     color: var(--white-2);
-    font-size: var(--fs-3);
-    letter-spacing: -0.25px;
+    font-size: var(--fs-2);
+    letter-spacing: 0.25px;
     margin-bottom: 10px;
+    text-align: center;
 }
 .info-content .title {
     color: var(--white-1);
@@ -305,6 +318,7 @@ main p {
     width: max-content;
     padding: 3px 12px;
     border-radius: 8px;
+    filter: drop-shadow(0 0 8px hsla(0, 1%, 33%, 0.438));
 }
 .info_more-btn {
     top: -15px;
