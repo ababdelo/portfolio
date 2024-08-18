@@ -17,11 +17,14 @@
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
       </script>
       <script type="text/javascript">
-         (function(){
-            emailjs.init({
-               publicKey: "49wfJ-Lc_lvYpxtOW"
-            });
-         })();
+          (function() {
+              const publicKey = "49wfJ-Lc_lvYpxtOW";
+              console.log("Public Key:", publicKey);
+      
+              emailjs.init({
+                  publicKey: publicKey
+              });
+          })();
       </script>
    </head>
    <body>
