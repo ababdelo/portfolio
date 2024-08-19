@@ -7,12 +7,22 @@
       <meta name=keywords content="ababdelo, edunwant42, Portfolio, Technology, Robotics, Innovation, Projects, Professional Journey">
       <meta name=author content=ababdelo>
       <title>Portfolio</title>
-      <link rel=icon type=image/x-icon href=./assets/images/logo/ababdelo.logo.webp sizes=128x128>
+      <link rel=icon type=image/x-icon href="./assets/images/logo/ababdelo.logo.ico">
       <noscript>
          <link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css rel=stylesheet>
       </noscript>
       <script>!function(){var e=document.createElement("link");e.href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css",e.rel="stylesheet",e.type="text/css",document.getElementsByTagName("head")[0].appendChild(e)}()</script>
       <link rel=stylesheet href=./assets/css/style.css>
+      <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+      </script>
+      <script type="text/javascript">
+         (function(){
+            emailjs.init({
+            publicKey: "Tkp_2K7SY-gqYOdqP",
+            });
+         })();
+      </script>
    </head>
    <body>
       <div id=canvas-container>
@@ -25,7 +35,7 @@
                   <img class=avtr src=./assets/images/avatars/mine.webp alt="Avatar logo" width=80>
                </figure>
                <div class=info-content>
-                  <h1 class=name title="Abderrahmane Abdelouafi">
+                  <h1 id="usr-name" class=name title="Abderrahmane Abdelouafi">
                      Abderrahmane <br>
                      Abdelouafi
                   </h1>
@@ -833,24 +843,25 @@
                </section>
                <section class=contact-form>
                   <h3 class="h3 form-title">Contact Form</h3>
-                  <form action=# class=form data-form>
-                     <div class=input-wrapper>
-                        <input name=fullname class=form-input placeholder="Full name" required data-form-input>
-                        <input type=email name=email class=form-input placeholder="Email address" required data-form-input>
+                  <form onsubmit="sendMail(); return false;" class="form" data-form>
+                     <div class="input-wrapper">
+                       <input id="contact-name" name="fullname" class="form-input" placeholder="Full name" >
+                       <input id="contact-email" type="email" name="email" class="form-input" placeholder="Email address" >
                      </div>
-                     <textarea name=message class=form-input placeholder="Your Message" required data-form-input></textarea>
-                     <button class=form-btn type=submit disabled data-form-btn>
-                     <i class="fa-regular fa-paper-plane"></i>
-                     <span>Send Message</span>
+                     <textarea id="contact-message" name="message" class="form-input" placeholder="Your Message" ></textarea>
+                     <button class="form-btn" type="submit">
+                       <i class="fa-regular fa-paper-plane"></i>
+                       <span>Send Message</span>
                      </button>
-                  </form>
+                   </form>                   
                </section>
             </article>
          </div>
       </main>
-      <script src=./assets/js/script.js></script>
-      <script src=./assets/js/canvas.js></script>
-      <script src=./assets/js/age.js></script>
-      <!-- <script src=assets/js/scrt.js></script> -->
+      <script src="./assets/js/script.js"></script>
+      <script src="./assets/js/canvas.js"></script>
+      <script src="./assets/js/age.js"></script>
+      <script src="./assets/js/mail.js"></script>
+      <script src="./assets/js/scrt.js"></script>
    </body>
 </html>
