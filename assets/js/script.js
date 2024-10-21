@@ -1,1 +1,196 @@
-"use strict";const elementToggleFunc=function(e){e.classList.toggle("active")},sidebar=document.querySelector("[data-sidebar]"),sidebarBtn=document.querySelector("[data-sidebar-btn]");sidebarBtn.addEventListener("click",(function(){elementToggleFunc(sidebar)}));const testimonialsItem=document.querySelectorAll("[testimonials-data-item]"),modalContainer=document.querySelector("[testimonials-data-modal-container]"),modalCloseBtn=document.querySelector("[testimonials-data-modal-close-btn]"),overlay=document.querySelector("[testimonials-data-overlay]"),modalImg=document.querySelector("[testimonials-data-modal-img]"),modalTitle=document.querySelector("[testimonials-data-modal-title]"),modalText=document.querySelector("[testimonials-data-modal-text]"),testimonialsModalFunc=function(){modalContainer.classList.toggle("active"),overlay.classList.toggle("active")};for(let e=0;e<testimonialsItem.length;e++)testimonialsItem[e].addEventListener("click",(function(){modalImg.src=this.querySelector("[testimonials-data-avatar]").src,modalImg.alt=this.querySelector("[testimonials-data-avatar]").alt,modalTitle.innerHTML=this.querySelector("[testimonials-data-title]").innerHTML,modalText.innerHTML=this.querySelector("[testimonials-data-text]").innerHTML,testimonialsModalFunc()}));modalCloseBtn.addEventListener("click",testimonialsModalFunc),overlay.addEventListener("click",testimonialsModalFunc);const selectButton=document.querySelector("[data-select]"),selectItemsContainer=document.querySelector("[data-select-items]"),selectValue=document.querySelector("[data-selecct-value]"),selectItems=document.querySelectorAll("[data-select-item]");selectButton.addEventListener("click",(function(){elementToggleFunc(selectItemsContainer),selectItemsContainer.classList.contains("active")?(selectItemsContainer.style.height=`${selectItemsContainer.scrollHeight}px`,selectItemsContainer.style.opacity="1",selectItemsContainer.style.transition="height 0.3s ease, opacity 0.3s ease"):(selectItemsContainer.style.height="0",selectItemsContainer.style.opacity="0",selectItemsContainer.style.transition="height 0.3s ease, opacity 0.3s ease")})),selectItems.forEach((e=>{e.addEventListener("click",(function(){let e=this.innerText.toLowerCase();selectValue.innerText=this.innerText,selectItemsContainer.classList.remove("active"),selectItemsContainer.style.height="0",selectItemsContainer.style.opacity="0",selectItemsContainer.style.transition="height 0.3s ease, opacity 0.3s ease",filterFunc(e)}))}));const filterItems=document.querySelectorAll(".project-item"),filterFunc=function(e){filterItems.forEach((t=>{let o=t.dataset.projectType.toLowerCase().trim();console.log("Selected Category:",e),e===o||"all"===e?(t.classList.add("active"),t.style.display="block"):(t.classList.remove("active"),t.style.display="none")}))};window.addEventListener("load",(function(){let e=document.querySelector("[data-filter-btn].active").innerText.toLowerCase();filterFunc(e)}));let lastClickedBtn=document.querySelector("[data-filter-btn].active");document.querySelectorAll("[data-filter-btn]").forEach((e=>{e.addEventListener("click",(function(){let e=this.innerText.toLowerCase();selectValue.innerText=this.innerText,filterFunc(e),lastClickedBtn.classList.remove("active"),this.classList.add("active"),lastClickedBtn=this}))}));const form=document.querySelector("[data-form]"),formInputs=document.querySelectorAll("[data-form-input]"),formBtn=document.querySelector("[data-form-btn]");formInputs.forEach((e=>{e.addEventListener("input",(function(){form.checkValidity()?formBtn.removeAttribute("disabled"):formBtn.setAttribute("disabled","")}))}));const navigationLinks=document.querySelectorAll("[data-nav-link]"),pages=document.querySelectorAll("[data-page]");navigationLinks.forEach(((e,t)=>{e.addEventListener("click",(function(){pages.forEach(((e,t)=>{this.innerHTML.toLowerCase()===e.dataset.page?(e.classList.add("active"),navigationLinks[t].classList.add("active"),window.scrollTo(0,0)):(e.classList.remove("active"),navigationLinks[t].classList.remove("active"))}))}))}));const projectItems=document.querySelectorAll(".project-item"),projectModalContainer=document.querySelector(".project-modal-container"),projectModalTitle=document.querySelector(".project-modal-title"),projectModalImg=document.querySelector(".project-modal-img"),projectModalDesc=document.querySelector(".project-modal-desc"),projectModalLink=document.querySelector(".project-modal-link"),projectModalType=document.querySelector(".project-modal-type"),projectModalOverlay=document.querySelector(".project-overlay"),projectCloseBtn=document.querySelector(".project-modal-close-btn"),toggleProjectModal=()=>{projectModalContainer.classList.toggle("active"),projectModalOverlay.classList.toggle("active")};projectItems.forEach((e=>{e.addEventListener("click",(function(){projectModalTitle.innerText=this.dataset.projectTitle,projectModalImg.src=this.querySelector("img").src,projectModalType.innerText=this.dataset.projectType,projectModalDesc.innerText=this.dataset.projectDesc,projectModalLink.href=this.dataset.projectLink,toggleProjectModal()}))})),projectCloseBtn.addEventListener("click",toggleProjectModal),projectModalOverlay.addEventListener("click",toggleProjectModal),console.log("script.js loaded");
+"use strict";
+
+// Toggle element function
+const elementToggleFunc = (element) => {
+    element.classList.toggle("active");
+};
+
+// Sidebar toggle
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+
+sidebarBtn.addEventListener("click", () => {
+    elementToggleFunc(sidebar);
+});
+
+// Testimonials modal
+const testimonialsItems = document.querySelectorAll("[testimonials-data-item]");
+const modalContainer = document.querySelector("[testimonials-data-modal-container]");
+const modalCloseBtn = document.querySelector("[testimonials-data-modal-close-btn]");
+const overlay = document.querySelector("[testimonials-data-overlay]");
+const modalImg = document.querySelector("[testimonials-data-modal-img]");
+const modalTitle = document.querySelector("[testimonials-data-modal-title]");
+const modalText = document.querySelector("[testimonials-data-modal-text]");
+
+const toggleTestimonialsModal = () => {
+    modalContainer.classList.toggle("active");
+    overlay.classList.toggle("active");
+};
+
+testimonialsItems.forEach((item) => {
+    item.addEventListener("click", () => {
+        modalImg.src = item.querySelector("[testimonials-data-avatar]").src;
+        modalImg.alt = item.querySelector("[testimonials-data-avatar]").alt;
+        modalTitle.innerHTML = item.querySelector("[testimonials-data-title]").innerHTML;
+        modalText.innerHTML = item.querySelector("[testimonials-data-text]").innerHTML;
+        toggleTestimonialsModal();
+    });
+});
+
+modalCloseBtn.addEventListener("click", toggleTestimonialsModal);
+overlay.addEventListener("click", toggleTestimonialsModal);
+
+// Select dropdown
+const selectButton = document.querySelector("[data-select]");
+const selectItemsContainer = document.querySelector("[data-select-items]");
+const selectValue = document.querySelector("[data-selecct-value]");
+const selectItems = document.querySelectorAll("[data-select-item]");
+
+selectButton.addEventListener("click", () => {
+    elementToggleFunc(selectItemsContainer);
+    const isActive = selectItemsContainer.classList.contains("active");
+
+    selectItemsContainer.style.height = isActive ? `${selectItemsContainer.scrollHeight}px` : "0";
+    selectItemsContainer.style.opacity = isActive ? "1" : "0";
+    selectItemsContainer.style.transition = "height 0.3s ease, opacity 0.3s ease";
+});
+
+selectItems.forEach((item) => {
+    item.addEventListener("click", () => {
+        const selectedValue = item.innerText.toLowerCase();
+        selectValue.innerText = item.innerText;
+
+        selectItemsContainer.classList.remove("active");
+        selectItemsContainer.style.height = "0";
+        selectItemsContainer.style.opacity = "0";
+        filterFunc(selectedValue);
+    });
+});
+
+// Filter functionality
+const filterItems = document.querySelectorAll(".project-item");
+
+const filterFunc = (selectedCategory) => {
+    filterItems.forEach((item) => {
+        const itemType = item.dataset.projectType.toLowerCase().trim();
+        const isMatch = selectedCategory === itemType || selectedCategory === "all";
+
+        item.classList.toggle("active", isMatch);
+        item.style.display = isMatch ? "block" : "none";
+    });
+};
+
+// Filter buttons functionality
+window.addEventListener("load", () => {
+    const activeBtnText = document.querySelector("[data-filter-btn].active").innerText.toLowerCase();
+    filterFunc(activeBtnText);
+});
+
+let lastClickedBtn = document.querySelector("[data-filter-btn].active");
+
+document.querySelectorAll("[data-filter-btn]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const btnText = btn.innerText.toLowerCase();
+        selectValue.innerText = btn.innerText;
+
+        filterFunc(btnText);
+        lastClickedBtn.classList.remove("active");
+        btn.classList.add("active");
+        lastClickedBtn = btn;
+    });
+});
+
+// Form validation
+const form = document.querySelector("[data-form]");
+const formInputs = document.querySelectorAll("[data-form-input]");
+const formBtn = document.querySelector("[data-form-btn]");
+
+formInputs.forEach((input) => {
+    input.addEventListener("input", () => {
+        form.checkValidity() ? formBtn.removeAttribute("disabled") : formBtn.setAttribute("disabled", "");
+    });
+});
+
+// Navigation links
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+navigationLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+        pages.forEach((page, index) => {
+            const isMatch = link.innerHTML.toLowerCase() === page.dataset.page;
+
+            page.classList.toggle("active", isMatch);
+            navigationLinks[index].classList.toggle("active", isMatch);
+        });
+        window.scrollTo(0, 0);
+    });
+});
+
+// Project modal
+const projectItems = document.querySelectorAll(".project-item");
+const projectModalContainer = document.querySelector(".project-modal-container");
+const projectModalTitle = document.querySelector(".project-modal-title");
+const projectModalImg = document.querySelector(".project-modal-img");
+const projectModalDesc = document.querySelector(".project-modal-desc");
+const projectModalStat = document.querySelector(".project-modal-status");
+const projectModalLink = document.querySelector(".project-modal-link");
+const projectModalType = document.querySelector(".project-modal-type");
+const projectModalOverlay = document.querySelector(".project-overlay");
+const projectCloseBtn = document.querySelector(".project-modal-close-btn");
+
+const toggleProjectModal = () => {
+    projectModalContainer.classList.toggle("active");
+    projectModalOverlay.classList.toggle("active");
+};
+
+projectItems.forEach((item) => {
+    item.addEventListener("click", () => {
+        // Set project modal title, image, type, description, and status
+        projectModalTitle.innerText = item.dataset.projectTitle;
+        projectModalImg.src = item.querySelector("img").src;
+        projectModalType.innerText = item.dataset.projectType;
+        projectModalDesc.innerText = item.dataset.projectDesc;
+        projectModalStat.innerText = item.dataset.projectStat;
+
+        // Trim the project link value
+        const projectLink = item.dataset.projectLink.trim();
+
+        // Handle the project link: if empty, show "UNDEFINED", otherwise show "View Project"
+        if (!projectLink) {
+            projectModalLink.innerText = "UNDEFINED";
+            projectModalLink.style.color = "hsla(0, 0%, 84%, 0.7)"; // Neutral color
+            projectModalLink.removeAttribute("href"); // Make it non-clickable
+            projectModalLink.style.pointerEvents = "none"; // Disable interaction
+        } else {
+            projectModalLink.innerText = "View Project";
+            projectModalLink.setAttribute("href", projectLink); // Set the link
+            projectModalLink.style.color = "hsl(219, 79%, 70%)"; // Set default link color
+            projectModalLink.style.pointerEvents = "auto"; // Enable interaction
+        }
+
+        // Set project status color based on status value
+        const projectStatus = item.dataset.projectStat.toLowerCase();
+        const statusColors = {
+            "in progress": "#eeaa1c",  // Orange for on hold
+            "on hold": "#fe9801",      // Gold for in progress
+            "suspended": "#e6534b",    // Red for suspended
+            "planning": "#9ACEEB",     // blue for planning
+            "completed": "#58c637",     // Green for completed
+            "undefined": "#f0f0f0"     // Neutral color for undefined
+        };
+
+        // Apply the color based on the status, or use a default if not listed
+        projectModalStat.style.color = statusColors[projectStatus] || "#f0f0f0";
+
+        // Toggle modal visibility
+        toggleProjectModal();
+    });
+});
+
+
+
+projectCloseBtn.addEventListener("click", toggleProjectModal);
+projectModalOverlay.addEventListener("click", toggleProjectModal);
+
+console.log("script.js loaded");
