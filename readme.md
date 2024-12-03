@@ -27,7 +27,7 @@ Your feedback and contributions are highly appreciated! If you have any suggesti
 
 ### ` License :`
 
-This project is licensed under the <a style="color: #6BAEE5;" href="license.md">MIT License</a>.
+This project is licensed under the <a style="color: #6BAEE5;" href="LICENSE">MIT License</a>.
 
 <br>
 
