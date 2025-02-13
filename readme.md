@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/github/last-commit/ababdelo/portfolio?style=flat-square" /> &nbsp;&nbsp;
   <img src="https://img.shields.io/github/commit-activity/m/ababdelo/portfolio?style=flat-square" /> &nbsp;&nbsp;
   <img src="https://img.shields.io/github/followers/ababdelo" /> &nbsp;&nbsp;
-  <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fababdelo%2Fportfolio&label=Repository%20Visits&countColor=%230c7ebe&style=flat&labelStyle=none"/>
+  <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fababdelo%2Fportfolio&label=Repository%20Visits&countColor=%230c7ebe&style=flat&labelStyle=none"/> &nbsp;&nbsp;
   <img src="https://img.shields.io/github/stars/ababdelo/portfolio" /> &nbsp;&nbsp;
   <img src="https://img.shields.io/github/contributors/ababdelo/portfolio?style=flat-square" />
 </p>
