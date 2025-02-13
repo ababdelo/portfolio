@@ -1,34 +1,51 @@
-## <p style="color: #6BAEE5;" align="center">` Portfolio `</p>
+<!-- Title -->
+<h1 align="center" style="color: #6BAEE5;">Portfolio</h1>
 
-<p>
-Hey there! Welcome to my personal portfolio repository. Looking to get a glimpse of what I've been working on lately? Dive into <a style="color: #6BAEE5;" href="https://edunwant42.tech" target="blank"> my portfolio</a> to explore my projects, skills, and more.
+<!-- Introduction -->
+<p align="center">
+  Hey there! Welcome to my personal portfolio repository. Curious about my latest work? Visit <a href="https://edunwant42.tech" target="_blank" style="color: #6BAEE5;">my portfolio</a> to dive into my projects, skills, and more.
 </p>
 
-### ` Features :`
 
-Discover what sets my portfolio apart:
+## Portfolio Preview
 
-- **Responsive Design**: Seamlessly adapts to any screen size, ensuring an optimal viewing experience.
-- **Projects Showcase**: Explore a curated selection of my projects, complete with detailed descriptions and live demos.
-- **Skills Spotlight**: Get insight into my technical prowess through a comprehensive breakdown of my skills.
-- **Contact Form**: Ready to collaborate or have questions? Reach out to me directly via the contact form.
+Take a quick look at the key sections of my portfolio:
 
-### ` Technologies Used :`
+<p align="center">
 
-I've crafted this portfolio using:
+| About Section | Resume Section | Projects Section Example 1 | Projects Section Example 2 | Contact Section |
+|:-------------:|:--------------:|:-----------------:|:-----------------:|:-----------------:|
+| <img src="assets/images/preview/about.webp" alt="About Section Preview" width="300px" /> | <img src="assets/images/preview/resume.webp" alt="Resume Section Preview" width="300px" /> | <img src="assets/images/preview/projects-1.webp" alt="Project Example 1 Preview" width="300px" /> | <img src="assets/images/preview/projects-2.webp" alt="Project Example 2 Preview" width="300px" /> | <img src="assets/images/preview/contact.webp" alt="Contact Section Preview" width="300px" /> |
 
-- **HTML5**: For structuring the content and layout.
-- **CSS3**: To style and enhance the visual appeal.
-- **JavaScript**: For adding interactivity and dynamic elements.
+</p>
 
-### ` Contributions and Feedback :`
 
-Your feedback and contributions are highly appreciated! If you have any suggestions for improvement or would like to collaborate on a project.
 
-### ` License :`
+## ✨ Features
 
-This project is licensed under the <a style="color: #6BAEE5;" href="LICENSE">MIT License</a>.
+Explore what makes my portfolio unique:
+
+- **Responsive Design:** Seamlessly adapts to any screen size for an optimal viewing experience.
+- **Projects Showcase:** A curated collection of my projects with detailed descriptions and live demos.
+- **Skills Spotlight:** A comprehensive breakdown of my technical abilities.
+- **Contact Form:** Easily get in touch if you're looking to collaborate or have any questions.
+
+## 🛠 Technologies Used
+
+This portfolio is built with:
+
+- **HTML5:** For robust and semantic structure.
+- **CSS3:** To enhance visual appeal with modern styles.
+- **JavaScript:** Adding interactivity and dynamic features.
+
+## 🤝 Contributions and Feedback
+
+Your input is invaluable! If you have suggestions or would like to collaborate, please open an issue or submit a pull request.
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
 
 <br>
 
-#### <p align="center">`Thanks for stopping by and taking a peek at my work!`</p>
+<p align="center">Thanks for stopping by and taking a peek at my work!</p>
