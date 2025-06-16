@@ -1,6 +1,10 @@
 <h1 align="center">
- Portfolio of Abderrahmane Abdelouafi
+ My Portfolio
 </h1>
+
+ <br>
+ 
+ ![portfolio](https://socialify.git.ci/ababdelo/portfolio/image?font=Raleway&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Light)
 
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/ababdelo/portfolio?style=flat-square" /> &nbsp;&nbsp;
