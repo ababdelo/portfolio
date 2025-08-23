@@ -40,7 +40,7 @@ The portfolio is built using modern web technologies to ensure **performance, fl
 - **Version Control & Hosting:**  
   - <p ><img align="center" src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/> For repository management.  </p>
   - 🛠️ GitHub Pages – Hosting the portfolio.  
-  - 🌐 Custom Public DNS – Mapped to [edunwant42.tech](https://edunwant42.tech).  
+  - 🌐 Custom Public DNS – Mapped to [ed42.tech](https://ed42.tech).  
 
 - **Performance & Optimization:**  
   - 🚀 Lazy loading images for faster rendering.  
@@ -49,7 +49,7 @@ The portfolio is built using modern web technologies to ensure **performance, fl
 
 ## 🌐 Preview and Live Version
 
-- the url to my live hosted portfolio : [edunwant42.tech](https://edunwant42.tech).
+- the url to my live hosted portfolio : [ed42.tech](https://ed42.tech).
 - Below are preview images of the key sections of my portfolio:  
 
 <p align="center">
